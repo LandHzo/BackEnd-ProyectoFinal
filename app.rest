@@ -1,0 +1,80 @@
+
+@urlComercios = http://localhost:3000/comercios/
+@urlUsuarios = http://localhost:3000/usuarios/
+@urlAutenticacion = http://localhost:3000/autenticacion/
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNGE0ZjhhYjc5Y2U3NDYwYzZjZmUwZSIsImlhdCI6MTYzMjI2MDM5MSwiZXhwIjoxNjMyMzQ2NzkxfQ.27nBbj80aP_v7mvHLPz2U1bnwXD8qMVIOFlYg6NvtHI
+
+POST {{urlAutenticacion}}
+Content-Type: application/json
+
+{
+    "username":"katialand",
+    "password":"1234"
+}
+###
+//Comercios
+GET {{urlComercios}}
+token: {{token}}
+### 
+POST {{urlComercios}} 
+token: {{token}}
+Content-Type: application/json
+
+{
+    "latitud":"38.8951",
+    "longitud":"-77.0364",
+    "nombre":"El Sope",
+    "nombrePropietario":"Josue",
+    "telefono":"78526545",
+    "categoria":"Comida Mexicana",
+    "descripcion":"Descripcion random",
+    "direccion":"Chalatenango"
+}
+###
+
+GET {{urlComercios}}61494f97f714b8c2f6a429eb
+###
+
+PUT {{urlComercios}}614951a39dc835a135f61b63 
+Content-Type: application/json
+
+{
+"nombre":"Comercio 01 modificado", "direccion":"chalatenango"
+}
+###
+DELETE {{urlComercios}}61494f97f714b8c2f6a429eb
+
+//show dbs //use empredeapp //show collections //db.comercios.find()
+###
+
+//USUARIOS
+GET {{urlUsuarios}}
+### 
+POST {{urlUsuarios}}
+Content-Type: application/json
+
+{
+    "nombre":"Pedro Apolinar", 
+    "usuario":"pedro",
+    "email":"apolinar@gmail.com", 
+    "usuario":"pedro", 
+    "password":"1234",
+    "activo":true
+}
+###
+
+GET {{urlUsuarios}}614951e19dc835a135f61b68
+###
+
+PUT {{urlUsuarios}}614951e19dc835a135f61b68 
+Content-Type: application/json
+
+{
+
+    "nombre":"Pedro Apolinar", 
+    "email":"apolinar@gmail.com", 
+    "usuario":"pedro", 
+    "password":"1234"
+}
+###
+DELETE {{urlUsuarios}}614951e19dc835a135f61b68
